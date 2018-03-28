@@ -13,5 +13,6 @@ android {
 
 dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.github.wshychbydh:ActionMonitor:1.0.4'
+    /*请使用最新的版本，旧的版本可能会有功能缺陷*/
+    implementation 'com.github.wshychbydh:ActionMonitor:1.1.0'
 }

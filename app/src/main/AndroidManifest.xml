@@ -6,5 +6,10 @@
         <meta-data
             android:name="domain"
             android:value="comheshidaiappactiondemo" />
+
+        <!--添加App的渠道号，不添加默认为空-->
+        <meta-data
+            android:name="channel"
+            android:value="如应用宝渠道号" />
     </application>
 </manifest>

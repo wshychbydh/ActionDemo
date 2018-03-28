@@ -15,9 +15,6 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //如果需要开启日志打印，默认未开启
-        LogUtils.setDebugAble(true);
-        MonitorSdk.init(this);
-        registerActivityLifecycleCallbacks(new ActivityLifecycleImpl());
+        MonitorSdk.init(this, BuildConfig.DEBUG);
     }
 }

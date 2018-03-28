@@ -1,6 +1,7 @@
 package com.heshidai.app.actiondemo;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -23,7 +24,7 @@ public class JavaView extends View {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mImpl.onAttached();
+        mImpl.onAttached(this);
     }
 
     @Override
@@ -33,8 +34,8 @@ public class JavaView extends View {
     }
 
     @Override
-    protected void onWindowVisibilityChanged(int visibility) {
-        super.onWindowVisibilityChanged(visibility);
-        mImpl.onVisibilityChanged(this);
+    protected void onVisibilityChanged(@NonNull View changedView, int visibility) {
+        super.onVisibilityChanged(changedView, visibility);
+        mImpl.onVisibilityChanged(visibility);
     }
 }
