@@ -1,10 +1,9 @@
-package com.heshidai.app.actiondemo;
+package com.app.demo.action;
 
 import android.app.Application;
 
-import com.heshidai.plugin.monitor.MonitorSdk;
-import com.heshidai.plugin.monitor.lifecycle.impl.ActivityLifecycleImpl;
-import com.heshidai.plugin.monitor.util.LogUtils;
+import com.plugin.monitor.MonitorSdk;
+
 
 /**
  * Created by cool on 2018/3/26.

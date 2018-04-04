@@ -1,6 +1,7 @@
-package com.heshidai.app.actiondemo;
+package com.app.demo.action;
 
-import com.heshidai.plugin.monitor.MonitorSdk;
+
+import com.plugin.monitor.MonitorSdk;
 
 /**
  * Created by cool on 2018/3/26.
