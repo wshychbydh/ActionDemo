@@ -2,14 +2,17 @@
     package="com.app.demo.action">
 
     <application android:name="com.app.demo.action.BaseApplication">
-        <!--默认取的就是包名，故无特殊需要不需要设置该值-->
+
+        <!--默认取的就是包名，无特殊需求不需要设置该值-->
         <meta-data
             android:name="domain"
-            android:value="comheshidaiappactiondemo" />
+            android:value="comappdemoaction" />
 
         <!--添加App的渠道号，不添加默认为空-->
+        <!--会额外取一次友盟的渠道，如UMENG_CHANNEL-->
         <meta-data
             android:name="channel"
             android:value="如应用宝渠道号" />
+
     </application>
 </manifest>

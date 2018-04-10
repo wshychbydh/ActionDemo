@@ -1,46 +1,46 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 25
     defaultConfig {
         applicationId "com.app.demo.action"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 25
     }
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:25.0.1'
     /*请使用最新的版本，旧的版本可能会有功能缺陷*/
-    implementation 'com.github.wshychbydh:ActionMonitor:1.1.1'
+    implementation 'com.github.wshychbydh:ActionMonitor:1.1.4'
 }
-
-ext {
-    //如果Injection的包名是com.plugin.inject，则可以不配置
-    INJECT_PATH = "com.app.demo.inject.Injection"
-
-    INJECT_CLICK = true          //注入所有符合条件的onClick方法，默认为true
-    INJECT_TOUCH = false          //onTouch方法，默认为false
-    INJECT_LONG_CLICK = false     //onLongClick方法，默认为false
-    INJECT_RADIOGROUP = false     //RadioGroup的onCheckedChanged方法，默认为false
-    INJECT_COMPOUNDBUTTON = false //CompoundButton的onCheckedChanged方法，默认为false
-    INJECT_LOG = true            //是否打印日志，默认false
-}
-
-//添加依赖
-buildscript {
-    repositories {
-        google()
-        jcenter()
-        maven {
-            url 'https://jitpack.io'
-        }
-    }
-    dependencies {
-        /*请使用最新的版本，旧的版本可能会有功能缺陷*/
-        classpath 'com.github.wshychbydh:Injection:1.0.3'
-    }
-}
+//
+//ext {
+//    //如果Injection的包名是com.plugin.inject，则可以不配置
+//    INJECT_PATH = "com.app.demo.inject.Injection"
+//
+//    INJECT_CLICK = true          //注入所有符合条件的onClick方法，默认为true
+//    INJECT_TOUCH = false          //onTouch方法，默认为false
+//    INJECT_LONG_CLICK = false     //onLongClick方法，默认为false
+//    INJECT_RADIOGROUP = false     //RadioGroup的onCheckedChanged方法，默认为false
+//    INJECT_COMPOUNDBUTTON = false //CompoundButton的onCheckedChanged方法，默认为false
+//    INJECT_LOG = true            //是否打印日志，默认false
+//}
+//
+////添加依赖
+//buildscript {
+//    repositories {
+//        google()
+//        jcenter()
+//        maven {
+//            url 'https://jitpack.io'
+//        }
+//    }
+//    dependencies {
+//        /*请使用最新的版本，旧的版本可能会有功能缺陷*/
+//        classpath 'com.github.wshychbydh:Injection:1.0.5'
+//    }
+//}
 
 //应用插件
-apply plugin: com.plugin.inject.InjectPlugin
+//apply plugin: com.plugin.inject.InjectPlugin

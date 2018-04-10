@@ -8,9 +8,10 @@ import com.plugin.monitor.lifecycle.impl.MonitorFragment;
  */
 
 public class BaseFragment extends MonitorFragment {
+
+    //通常情况下，无需重写该方法，由Activity是否作为轨迹来决定
     @Override
     public boolean isNeedMonitor() {
-        //如果强制返回true或false，则会强制添加（忽略Activity是否被过滤）
         return super.isNeedMonitor();
     }
 }

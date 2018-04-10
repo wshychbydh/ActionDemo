@@ -19,7 +19,7 @@ public class JavaView extends View {
 
     public JavaView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        //如果设置了该参数，表示强制行为，默认为true
+        //默认为true,且由Activity是否作为轨迹来判断
         mImpl.setNeedMonitor(true);
     }
 
