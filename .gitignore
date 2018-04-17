@@ -9,7 +9,6 @@
 /gradlew.bat
 gradlew
 gradle.properties
-app/proguard-rules.pro
 app/src/main/res/
 gradle/
 src/main/res/values/
