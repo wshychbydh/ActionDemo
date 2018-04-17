@@ -2,7 +2,8 @@ package com.app.demo.action;
 
 import android.app.Activity;
 
-import com.plugin.inject.Ignore;
+import com.plugin.monitor.annotation.Ignore;
+
 
 /**
  * Created by cool on 2018/4/10.
