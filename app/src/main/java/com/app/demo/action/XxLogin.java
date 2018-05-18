@@ -15,4 +15,7 @@ public class XxLogin {
     public void loginOrSomeElse() {
         MonitorSdk.savePhone("用户手机号");
     }
+    public void logout() {
+        MonitorSdk.savePhone(null);
+    }
 }
