@@ -48,7 +48,7 @@ Step 2. Add the dependency
 
 >在需要的时候重写该方法，用于标识当前fragment是否需要作为轨迹，默认由Activity是否作为轨迹来判断
  
-      //通常情况下，无需重写该方法
+      //通常情况下无需重写该方法
 	  @Override
       public boolean isNeedMonitor() {
           return super.isNeedMonitor();
@@ -61,13 +61,13 @@ Step 2. Add the dependency
 
 	class xxView extend View {
         private ViewLifecycleImpl mImpl = new ViewLifecycleImpl(getContext());
-        
+
         public xxView(Context context) {
            super(context);
-           //默认由Activity是否作为轨迹来判断，无需调用该方法
-           mImpl.setNeedMonitor(true); 
+           //默认由Activity是否作为轨迹来判断，通常无需调用该方法
+           mImpl.setNeedMonitor(true);
         }
-        
+
         @Override
         protected void onAttachedToWindow() {
             super.onAttachedToWindow();
@@ -86,12 +86,13 @@ Step 2. Add the dependency
             mImpl.onVisibilityChanged(visibility);
         }
     }
+
 ##### 混淆：
 如果你使用了混淆，在app下的proguard-rules文件中添加如下配置:
-    
+
     # monitor
     -keep class com.plugin.**{*;}
-    
+
     # retrofit
     -dontnote retrofit2.Platform
     -dontwarn retrofit2.Platform$Java8
@@ -108,16 +109,23 @@ Step 2. Add the dependency
 
 	 <meta-data android:name="domain"
                 android:value="应用标识（默认为包名）"/>
-                
-     <meta-data android:name="channel"
+
+     <meta-data android:name="channel或UMENG_CHANNEL"
                 android:value="应用渠道"/>
+
+>多渠道打包时若不能在manifest中配置渠道，可主动调用如下代码设置
+
+     MonitorSdk.saveChannel(channel)
 
 >在用户登陆及判断登陆(已登录用户)状态的地方分别调用
 
      MonitorSdk.savePhone(phone)
 
+>在用户登出的时候调用
 
-#### SDK中的权限如下：（有则获取，不会主动请求）
+     MonitorSdk.savePhone(null)
+
+#### SDK中的权限（已在sdk中添加）如下：（有则获取，不会主动请求）
 
        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
        <uses-permission android:name="android.permission.GET_TASKS" />
@@ -126,6 +134,9 @@ Step 2. Add the dependency
        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
        <!-- 仅网络定位的权限 -->
        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+       <!-- PS:（无需添加）但有的手机可能需要该权限,授权软件才能识别到应用需要定位权限 -->
+       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 #### Demo地址：https://github.com/wshychbydh/ActionDemo
 
